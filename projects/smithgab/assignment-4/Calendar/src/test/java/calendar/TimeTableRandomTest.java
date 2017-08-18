@@ -27,29 +27,28 @@ public class TimeTableRandomTest {
 	 @Test
 	  public void randomtest()  throws Throwable  {
 		 
-		long startTime = Calendar.getInstance().getTimeInMillis();
+		long startTime = Calendar.getInstance().getTimeInMillis(); //Initializing calendar time
 	 	long elapsed = Calendar.getInstance().getTimeInMillis() - startTime;
 
 
 	 	for(int i = 0; elapsed < TestTimeout; i++)
 	 	{
 	 
-	 		TimeTable table = new TimeTable();
-	 		Random random = new Random();
+	 		TimeTable table = new TimeTable();		//create time table object
+	 		Random random = new Random();		//random 
 			
 			GregorianCalendar calendarTest = new GregorianCalendar();
 			CalDay day = new CalDay(calendarTest);
 
-	 		Appt appt = new Appt(1, 2, 3, 4, 5, "TESTADD", "TESTADD");
+	 		Appt appt = new Appt(1, 2, 3, 4, 5, "TESTADD", "TESTADD"); //initialize Appt object
 
 	 		
-	 		for(int j = 0; j < NUM_TESTS; j++)
+	 		for(int y = 0; y < NUM_TESTS; y++)
 	 		{
 	 			
 
-	 			for(int k = 0; k < 15; k++)
-	 			{
-				//had a hard time with this class keeping randomization local for simplicity
+	 			for(int z = 0; z < 3; z++)		//inner for loop
+	 			{                                //had a hard time with this class keeping randomization local for simplicity
 	 			appt.setStartMinute(random.nextInt(100)-10); //set appointment values with those inside and outside 
 	 			appt.setStartHour(random.nextInt(100)-5); 
 	 			appt.setStartDay(random.nextInt(100)-10);
@@ -68,19 +67,6 @@ public class TimeTableRandomTest {
 				table.deleteAppt(null, null);
 	 		}
 
-	 		appt.setStartMinute(1);
-	 		appt.setStartHour(1);
-	 		appt.setStartDay(1);
-			appt.setStartMonth(1);
-
-	 		Appt appt1 = new Appt(1, 2, 3, 4, 5, "TESTADD", "TESTADD");
-	 		
-	 		GregorianCalendar calendarTest1 = new GregorianCalendar();
-			CalDay day1 = new CalDay(calendarTest1);
-
-			day1.addAppt(appt);
-
-			table.deleteAppt(day1.appts, appt1);
 	 		table.deleteAppt(null, null);
 
 	 		 elapsed = (Calendar.getInstance().getTimeInMillis() - startTime);
