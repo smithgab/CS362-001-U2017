@@ -15,7 +15,11 @@ public class CalDayTest {
 
 	 @Test
 	  public void test01()  throws Throwable  {
-
+		  int day = 
+		  int month =
+		  int year =
+		  
+	
 	 }
 	 @Test
 	  public void test02()  throws Throwable  {
